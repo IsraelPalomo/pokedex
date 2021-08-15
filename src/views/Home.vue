@@ -22,7 +22,7 @@ export default {
 		justify-content: center;
 		margin-top: 5rem;
 		.titulo--pokedex {
-			width: 80%;
+			width: 90%;
 			margin: 0 auto;
 		}
 	}
