@@ -3,15 +3,17 @@
 		<div class="titulo">
 			<img class="titulo--pokedex" src="../assets/titulo_principal.png" alt="" />
 		</div>
+		<Navegacion />
 	</div>
 </template>
 
 <script>
+import Navegacion from "../components/Navegacion.vue";
 // @ is an alias to /src
 
 export default {
 	name: "Home",
-	components: {},
+	components: { Navegacion },
 };
 </script>
 
