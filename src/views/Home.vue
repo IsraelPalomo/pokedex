@@ -1,6 +1,8 @@
 <template>
 	<div class="home">
-		<img src="../assets/pokeball.png" alt="" />
+		<div class="titulo">
+			<img class="titulo--pokedex" src="../assets/titulo_principal.png" alt="" />
+		</div>
 	</div>
 </template>
 
@@ -12,3 +14,17 @@ export default {
 	components: {},
 };
 </script>
+
+<style lang="scss" scoped>
+.home {
+	.titulo {
+		display: flex;
+		justify-content: center;
+		margin-top: 5rem;
+		.titulo--pokedex {
+			width: 80%;
+			margin: 0 auto;
+		}
+	}
+}
+</style>
