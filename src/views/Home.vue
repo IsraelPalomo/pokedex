@@ -16,6 +16,7 @@
 				o por su numero en la pokedex
 			</p>
 		</section>
+		<section class="pokemons"></section>
 	</div>
 </template>
 
@@ -41,6 +42,7 @@ export default {
 		color: white;
 		padding: 2rem 2rem 2rem 1rem;
 		text-align: left;
+
 		p {
 			margin-top: 1rem;
 		}
@@ -57,6 +59,10 @@ export default {
 			border: none;
 			border-radius: 5px;
 		}
+	}
+	.pokemons {
+		background-color: #f2f2f2;
+		height: 50rem;
 	}
 }
 
