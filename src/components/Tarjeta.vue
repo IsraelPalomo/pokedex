@@ -13,7 +13,12 @@
 </template>
 
 <script>
-export default {};
+import { mapState } from "vuex";
+export default {
+	computed: {
+		...mapState(["pokemon"]),
+	},
+};
 </script>
 
 <style lang="scss" scoped>
