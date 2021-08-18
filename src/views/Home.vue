@@ -16,23 +16,35 @@
 				o por su numero en la pokedex
 			</p>
 		</section>
-		<section class="pokemons"></section>
+		<section class="pokemons">
+			<Tarjeta />
+		</section>
 	</div>
 </template>
 
 <script>
+import Tarjeta from "../components/Tarjeta.vue";
+import { mapState, mapActions } from "vuex";
 // @ is an alias to /src
 
 export default {
 	name: "Home",
-	components: {},
+	components: { Tarjeta },
+	computed: {
+		...mapState(["pokemons"]),
+	},
+	methods: {
+		...mapActions(["buscarPokemon"]),
+	},
+	created() {
+		this.buscarPokemon();
+	},
 };
 </script>
 
 <style lang="scss" scoped>
 .home {
 	.titulo--principal {
-		width: 100%;
 		background-color: white;
 		color: grey;
 		padding: 1rem;
@@ -63,6 +75,8 @@ export default {
 	.pokemons {
 		background-color: #f2f2f2;
 		height: 50rem;
+		padding-top: 5rem;
+		padding: 5rem 0.5rem;
 	}
 }
 
