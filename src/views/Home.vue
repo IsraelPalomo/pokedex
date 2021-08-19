@@ -17,21 +17,104 @@
 			</p>
 		</section>
 		<section class="pokemons">
-			<Tarjeta />
+			<div class="tarjetaPokemon" v-for="(poke, index) in pokemon" :key="index">
+				<div class="tarjetaPokemon__contenedorImg">
+					<img
+						class="tarjetaPokemon__contenedorImg__img"
+						:src="poke.sprites.front_default"
+						alt=""
+					/>
+				</div>
+				<p class="numeroPokemon">Nº {{ poke.order }}</p>
+				<h3>{{ poke.name.charAt(0).toUpperCase() + poke.name.slice(1) }}</h3>
+				<div class="tarjetaPokemon__tipos">
+					<p
+						class="tarjetaPokemon__tipos__tipo1"
+						:style="[
+							poke.types[0].type.name == 'fire' ? 'background-color: #C72100' : '',
+							poke.types[0].type.name == 'grass' ? 'background: #66BA2A' : '',
+							poke.types[0].type.name == 'electric' ? 'background: #FBBA17' : '',
+							poke.types[0].type.name == 'water' ? 'background: #106CC7' : '',
+							poke.types[0].type.name == 'ground' ? 'background: #CFAE52' : '',
+							poke.types[0].type.name == 'rock' ? 'background: #9D863C' : '',
+							poke.types[0].type.name == 'fairy' ? 'background: #F0A9F0' : '',
+							poke.types[0].type.name == 'poison' ? 'background: #7D327E' : '',
+							poke.types[0].type.name == 'bug' ? 'background: #88960D' : '',
+							poke.types[0].type.name == 'dragon' ? 'background: #9481EB' : '',
+							poke.types[0].type.name == 'psychic' ? 'background: #D33367' : '',
+							poke.types[0].type.name == 'flying' ? 'background: #90A2F0' : '',
+							poke.types[0].type.name == 'fighting' ? 'background: #79301A' : '',
+							poke.types[0].type.name == 'normal' ? 'background: #C3BDB3' : '',
+							poke.types[0].type.name == 'dark' ? 'background: #0E0E0E' : '',
+							poke.types[0].type.name == 'ghost' ? 'background: #5E5EB0' : '',
+							poke.types[0].type.name == 'ice' ? 'background: #82DBF8' : '',
+							poke.types[0].type.name == 'steel' ? 'background: #9797A7' : '',
+						]"
+					>
+						{{ poke.types[0].type.name.charAt(0).toUpperCase() + poke.types[0].type.name.slice(1) }}
+					</p>
+					<span
+						class="tarjetaPokemon__tipos__tipo2 "
+						v-if="poke.types.length == 2"
+						:style="[
+							poke.types[1].type.name == 'fire' ? 'background: #C72100' : '',
+							poke.types[1].type.name == 'grass' ? 'background: #66BA2A' : '',
+							poke.types[1].type.name == 'electric' ? 'background: #FBBA17' : '',
+							poke.types[1].type.name == 'water' ? 'background: #106CC7' : '',
+							poke.types[1].type.name == 'ground' ? 'background: #CFAE52' : '',
+							poke.types[1].type.name == 'rock' ? 'background: #9D863C' : '',
+							poke.types[1].type.name == 'fairy' ? 'background: #F0A9F0' : '',
+							poke.types[1].type.name == 'poison' ? 'background: #7D327E' : '',
+							poke.types[1].type.name == 'bug' ? 'background: #88960D' : '',
+							poke.types[1].type.name == 'dragon' ? 'background: #9481EB' : '',
+							poke.types[1].type.name == 'psychic' ? 'background: #D33367' : '',
+							poke.types[1].type.name == 'flying' ? 'background: #90A2F0' : '',
+							poke.types[1].type.name == 'fighting' ? 'background: #79301A' : '',
+							poke.types[1].type.name == 'normal' ? 'background: #C3BDB3' : '',
+							poke.types[1].type.name == 'dark' ? 'background: #0E0E0E' : '',
+							poke.types[1].type.name == 'ghost' ? 'background: #5E5EB0' : '',
+							poke.types[1].type.name == 'ice' ? 'background: #82DBF8' : '',
+							poke.types[1].type.name == 'steel' ? 'background: #9797A7' : '',
+						]"
+					>
+						{{ poke.types[1].type.name.charAt(0).toUpperCase() + poke.types[1].type.name.slice(1) }}
+					</span>
+				</div>
+			</div>
 		</section>
 	</div>
 </template>
 
 <script>
-import Tarjeta from "../components/Tarjeta.vue";
 import { mapState, mapActions } from "vuex";
 // @ is an alias to /src
 
 export default {
+	data() {
+		return {
+			colors: {
+				fire: "#FDDFDF",
+				grass: "#DEFDE0",
+				electric: "#FCF7DE",
+				water: "#DEF3FD",
+				ground: "#f4e7da",
+				rock: "#d5d5d4",
+				fairy: "#fceaff",
+				poison: "#98d7a5",
+				bug: "#f8d5a3",
+				dragon: "#97b3e6",
+				psychic: "#eaeda1",
+				flying: "#F5F5F5",
+				fighting: "#E6E0D4",
+				normal: "#F5F5F5",
+			},
+		};
+	},
 	name: "Home",
-	components: { Tarjeta },
+	components: {},
+
 	computed: {
-		...mapState(["pokemons"]),
+		...mapState(["pokemon"]),
 	},
 	methods: {
 		...mapActions(["buscarPokemon"]),
@@ -77,6 +160,47 @@ export default {
 		height: 50rem;
 		padding-top: 5rem;
 		padding: 5rem 0.5rem;
+		.tarjetaPokemon {
+			padding: 1rem;
+			background-color: #313131;
+			color: white;
+			border-radius: 15px;
+			margin-bottom: 3rem;
+			.tarjetaPokemon__contenedorImg {
+				border-radius: 150px;
+
+				width: 15rem;
+				height: 15rem;
+				margin: 0 auto;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				img {
+					width: 12rem;
+					height: 12rem;
+				}
+			}
+			.tarjetaPokemon__tipos {
+				display: flex;
+				gap: 1rem;
+				margin-top: -1.5rem;
+				.tarjetaPokemon__tipos__tipo1 {
+					padding: 0.5rem;
+					border-radius: 15px;
+					width: 5rem;
+					text-align: center;
+				}
+				.tarjetaPokemon__tipos__tipo2 {
+					padding: 0.5rem;
+					border-radius: 15px;
+					width: 5rem;
+					text-align: center;
+				}
+			}
+		}
+		.numeroPokemon {
+			color: grey;
+		}
 	}
 }
 

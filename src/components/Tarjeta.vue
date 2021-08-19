@@ -13,10 +13,20 @@
 </template>
 
 <script>
-import { mapState } from "vuex";
+import { mapState, mapActions } from "vuex";
+
 export default {
+	data() {
+		return {};
+	},
 	computed: {
 		...mapState(["pokemon"]),
+	},
+	methods: {
+		...mapActions(["buscarPokemon"]),
+	},
+	beforeCreated() {
+		this.buscarPokemon();
 	},
 };
 </script>
