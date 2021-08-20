@@ -224,13 +224,18 @@ export default {
 		height: 50rem;
 		padding-top: 5rem;
 		padding: 5rem 0.5rem;
+		display: grid;
+		justify-content: center;
 		.tarjetaPokemon {
 			padding: 1rem;
 			background-color: #313131;
 			color: white;
 			border-radius: 15px;
 			margin-bottom: 3rem;
+
 			overflow: hidden;
+			min-height: 25rem;
+			max-width: 15rem;
 			&:hover {
 				transform: scale(1.1);
 			}
@@ -287,15 +292,34 @@ export default {
 @media (min-width: 450px) {
 }
 @media (min-width: 650px) {
-	.buscador {
-		display: flex;
-		gap: 2rem;
+	.home {
+		.buscador {
+			display: flex;
+			gap: 2rem;
+		}
+		.pokemons {
+			display: grid;
+			gap: 3rem;
+			grid-template-columns: repeat(2, 1fr);
+		}
 	}
 }
 
 @media (min-width: 900px) {
+	.home {
+		.pokemons {
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+		}
+	}
 }
 @media (min-width: 1200px) {
+	.home {
+		.pokemons {
+			display: grid;
+			grid-template-columns: repeat(4, 1fr);
+		}
+	}
 }
 @media (min-width: 2000px) {
 }
