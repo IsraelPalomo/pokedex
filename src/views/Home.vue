@@ -18,7 +18,48 @@
 		</section>
 		<section class="pokemons">
 			<div class="tarjetaPokemon" v-for="(poke, index) in pokemon" :key="index">
-				<div class="tarjetaPokemon__contenedorImg">
+				<div
+					class="tarjetaPokemon__contenedorImg"
+					:style="
+						poke.types[0].type.name == 'fire'
+							? 'background: #C72100'
+							: poke.types[0].type.name == 'grass'
+							? 'background:#66BA2A'
+							: poke.types[0].type.name == 'electric'
+							? 'background:#FBBA17'
+							: poke.types[0].type.name == 'water'
+							? 'background:#106CC7'
+							: poke.types[0].type.name == 'ground'
+							? 'background:#CFAE52'
+							: poke.types[0].type.name == 'rock'
+							? 'background:#9D863C'
+							: poke.types[0].type.name == 'fairy'
+							? 'background:#F0A9F0'
+							: poke.types[0].type.name == 'poison'
+							? 'background:#7D327E'
+							: poke.types[0].type.name == 'bug'
+							? 'background:#88960D'
+							: poke.types[0].type.name == 'dragon'
+							? 'background:#9481EB'
+							: poke.types[0].type.name == 'psychic'
+							? 'background:#D33367'
+							: poke.types[0].type.name == 'flying'
+							? 'background:#90A2F0'
+							: poke.types[0].type.name == 'fighting'
+							? 'background:#79301A'
+							: poke.types[0].type.name == 'normal'
+							? 'background:#C3BDB3'
+							: poke.types[0].type.name == 'dark'
+							? 'background:#0E0E0E'
+							: poke.types[0].type.name == 'ghost'
+							? 'background:#5E5EB0'
+							: poke.types[0].type.name == 'ice'
+							? 'background:#82DBF8'
+							: poke.types[0].type.name == 'steel'
+							? 'background:#9797A7'
+							: ''
+					"
+				>
 					<img
 						class="tarjetaPokemon__contenedorImg__img"
 						:src="poke.sprites.front_default"
@@ -32,33 +73,90 @@
 				<div class="tarjetaPokemon__tipos">
 					<p
 						class="tarjetaPokemon__tipos__tipo1"
-						:style="poke.types[0].type.name == 'fire' ? 'background: #C72100' : ''"
+						:style="
+							poke.types[0].type.name == 'fire'
+								? 'background: #C72100'
+								: poke.types[0].type.name == 'grass'
+								? 'background:#66BA2A'
+								: poke.types[0].type.name == 'electric'
+								? 'background:#FBBA17'
+								: poke.types[0].type.name == 'water'
+								? 'background:#106CC7'
+								: poke.types[0].type.name == 'ground'
+								? 'background:#CFAE52'
+								: poke.types[0].type.name == 'rock'
+								? 'background:#9D863C'
+								: poke.types[0].type.name == 'fairy'
+								? 'background:#F0A9F0'
+								: poke.types[0].type.name == 'poison'
+								? 'background:#7D327E'
+								: poke.types[0].type.name == 'bug'
+								? 'background:#88960D'
+								: poke.types[0].type.name == 'dragon'
+								? 'background:#9481EB'
+								: poke.types[0].type.name == 'psychic'
+								? 'background:#D33367'
+								: poke.types[0].type.name == 'flying'
+								? 'background:#90A2F0'
+								: poke.types[0].type.name == 'fighting'
+								? 'background:#79301A'
+								: poke.types[0].type.name == 'normal'
+								? 'background:#C3BDB3'
+								: poke.types[0].type.name == 'dark'
+								? 'background:#0E0E0E'
+								: poke.types[0].type.name == 'ghost'
+								? 'background:#5E5EB0'
+								: poke.types[0].type.name == 'ice'
+								? 'background:#82DBF8'
+								: poke.types[0].type.name == 'steel'
+								? 'background:#9797A7'
+								: ''
+						"
 					>
 						{{ poke.types[0].type.name.charAt(0).toUpperCase() + poke.types[0].type.name.slice(1) }}
 					</p>
 					<p
 						class="tarjetaPokemon__tipos__tipo2 "
 						v-if="poke.types.length == 2"
-						:class="[
-							poke.types[1].type.name == 'fire' ? 'background: #C72100' : '',
-							poke.types[1].type.name == 'grass' ? 'background: #66BA2A' : '',
-							poke.types[1].type.name == 'electric' ? 'background: #FBBA17' : '',
-							poke.types[1].type.name == 'water' ? 'background: #106CC7' : '',
-							poke.types[1].type.name == 'ground' ? 'background: #CFAE52' : '',
-							poke.types[1].type.name == 'rock' ? 'background: #9D863C' : '',
-							poke.types[1].type.name == 'fairy' ? 'background: #F0A9F0' : '',
-							poke.types[1].type.name == 'poison' ? 'background: #7D327E' : '',
-							poke.types[1].type.name == 'bug' ? 'background: #88960D' : '',
-							poke.types[1].type.name == 'dragon' ? 'background: #9481EB' : '',
-							poke.types[1].type.name == 'psychic' ? 'background: #D33367' : '',
-							poke.types[1].type.name == 'flying' ? 'background: #90A2F0' : '',
-							poke.types[1].type.name == 'fighting' ? 'background: #79301A' : '',
-							poke.types[1].type.name == 'normal' ? 'background: #C3BDB3' : '',
-							poke.types[1].type.name == 'dark' ? 'background: #0E0E0E' : '',
-							poke.types[1].type.name == 'ghost' ? 'background: #5E5EB0' : '',
-							poke.types[1].type.name == 'ice' ? 'background: #82DBF8' : '',
-							poke.types[1].type.name == 'steel' ? 'background: #9797A7' : '',
-						]"
+						:style="
+							poke.types[1].type.name == 'fire '
+								? 'background: #C72100'
+								: poke.types[1].type.name == 'grass'
+								? 'background:#66BA2A'
+								: poke.types[1].type.name == 'electric'
+								? 'background:#FBBA17'
+								: poke.types[1].type.name == 'water'
+								? 'background:#106CC7'
+								: poke.types[1].type.name == 'ground'
+								? 'background:#CFAE52'
+								: poke.types[1].type.name == 'rock'
+								? 'background:#9D863C'
+								: poke.types[1].type.name == 'fairy'
+								? 'background:#F0A9F0'
+								: poke.types[1].type.name == 'poison'
+								? 'background:#7D327E'
+								: poke.types[1].type.name == 'bug'
+								? 'background:#88960D'
+								: poke.types[1].type.name == 'dragon'
+								? 'background:#9481EB'
+								: poke.types[1].type.name == 'psychic'
+								? 'background:#D33367'
+								: poke.types[1].type.name == 'flying'
+								? 'background:#90A2F0'
+								: poke.types[1].type.name == 'fighting'
+								? 'background:#79301A'
+								: poke.types[1].type.name == 'normal'
+								? 'background:#C3BDB3'
+								: poke.types[1].type.name == 'dark'
+								? 'background:#0E0E0E'
+								: poke.types[1].type.name == 'ghost'
+								? 'background:#5E5EB0'
+								: poke.types[1].type.name == 'ice'
+								? 'background:#82DBF8'
+								: poke.types[1].type.name == 'steel'
+								? 'background:#9797A7'
+								: ''
+						"
 					>
 						{{ poke.types[1].type.name.charAt(0).toUpperCase() + poke.types[1].type.name.slice(1) }}
 					</p>
@@ -74,24 +172,7 @@ import { mapState, mapActions } from "vuex";
 
 export default {
 	data() {
-		return {
-			colors: {
-				fire: "#FDDFDF",
-				grass: "#DEFDE0",
-				electric: "#FCF7DE",
-				water: "#DEF3FD",
-				ground: "#f4e7da",
-				rock: "#d5d5d4",
-				fairy: "#fceaff",
-				poison: "#98d7a5",
-				bug: "#f8d5a3",
-				dragon: "#97b3e6",
-				psychic: "#eaeda1",
-				flying: "#F5F5F5",
-				fighting: "#E6E0D4",
-				normal: "#F5F5F5",
-			},
-		};
+		return {};
 	},
 	name: "Home",
 	components: {},
@@ -110,9 +191,6 @@ export default {
 
 <style lang="scss" scoped>
 .home {
-	.fire {
-		background-color: #c72100;
-	}
 	.titulo--principal {
 		background-color: white;
 		color: grey;
@@ -152,18 +230,31 @@ export default {
 			color: white;
 			border-radius: 15px;
 			margin-bottom: 3rem;
+			overflow: hidden;
+			&:hover {
+				transform: scale(1.1);
+			}
+
 			.tarjetaPokemon__contenedorImg {
 				border-radius: 150px;
 
 				width: 15rem;
 				height: 15rem;
+
 				margin: 0 auto;
 				display: flex;
 				justify-content: center;
 				align-items: center;
+				position: relative;
+				top: -3.5rem;
+				right: -3.5rem;
 				img {
 					width: 12rem;
 					height: 12rem;
+					position: relative;
+					top: 3.5rem;
+					right: 3.5rem;
+					filter: drop-shadow(10px 10px 15px #000);
 				}
 			}
 			.tarjetaPokemon__tipos {
