@@ -25,38 +25,21 @@
 						alt=""
 					/>
 				</div>
-				<p class="numeroPokemon">Nº {{ poke.order }}</p>
+
+				<p class="numeroPokemon">Nº 00{{ poke.order }}</p>
 				<h3>{{ poke.name.charAt(0).toUpperCase() + poke.name.slice(1) }}</h3>
+
 				<div class="tarjetaPokemon__tipos">
 					<p
 						class="tarjetaPokemon__tipos__tipo1"
-						:style="[
-							poke.types[0].type.name == 'fire' ? 'background-color: #C72100' : '',
-							poke.types[0].type.name == 'grass' ? 'background: #66BA2A' : '',
-							poke.types[0].type.name == 'electric' ? 'background: #FBBA17' : '',
-							poke.types[0].type.name == 'water' ? 'background: #106CC7' : '',
-							poke.types[0].type.name == 'ground' ? 'background: #CFAE52' : '',
-							poke.types[0].type.name == 'rock' ? 'background: #9D863C' : '',
-							poke.types[0].type.name == 'fairy' ? 'background: #F0A9F0' : '',
-							poke.types[0].type.name == 'poison' ? 'background: #7D327E' : '',
-							poke.types[0].type.name == 'bug' ? 'background: #88960D' : '',
-							poke.types[0].type.name == 'dragon' ? 'background: #9481EB' : '',
-							poke.types[0].type.name == 'psychic' ? 'background: #D33367' : '',
-							poke.types[0].type.name == 'flying' ? 'background: #90A2F0' : '',
-							poke.types[0].type.name == 'fighting' ? 'background: #79301A' : '',
-							poke.types[0].type.name == 'normal' ? 'background: #C3BDB3' : '',
-							poke.types[0].type.name == 'dark' ? 'background: #0E0E0E' : '',
-							poke.types[0].type.name == 'ghost' ? 'background: #5E5EB0' : '',
-							poke.types[0].type.name == 'ice' ? 'background: #82DBF8' : '',
-							poke.types[0].type.name == 'steel' ? 'background: #9797A7' : '',
-						]"
+						:style="poke.types[0].type.name == 'fire' ? 'background: #C72100' : ''"
 					>
 						{{ poke.types[0].type.name.charAt(0).toUpperCase() + poke.types[0].type.name.slice(1) }}
 					</p>
-					<span
+					<p
 						class="tarjetaPokemon__tipos__tipo2 "
 						v-if="poke.types.length == 2"
-						:style="[
+						:class="[
 							poke.types[1].type.name == 'fire' ? 'background: #C72100' : '',
 							poke.types[1].type.name == 'grass' ? 'background: #66BA2A' : '',
 							poke.types[1].type.name == 'electric' ? 'background: #FBBA17' : '',
@@ -78,7 +61,7 @@
 						]"
 					>
 						{{ poke.types[1].type.name.charAt(0).toUpperCase() + poke.types[1].type.name.slice(1) }}
-					</span>
+					</p>
 				</div>
 			</div>
 		</section>
@@ -127,6 +110,9 @@ export default {
 
 <style lang="scss" scoped>
 .home {
+	.fire {
+		background-color: #c72100;
+	}
 	.titulo--principal {
 		background-color: white;
 		color: grey;
@@ -184,6 +170,7 @@ export default {
 				display: flex;
 				gap: 1rem;
 				margin-top: -1.5rem;
+				align-items: center;
 				.tarjetaPokemon__tipos__tipo1 {
 					padding: 0.5rem;
 					border-radius: 15px;

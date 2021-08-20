@@ -7,6 +7,7 @@ export default new Vuex.Store({
 	state: {
 		pokemons: {},
 		pokemon: [],
+		colores: [],
 	},
 	mutations: {
 		buscarPokemons(state, payload) {
@@ -19,16 +20,17 @@ export default new Vuex.Store({
 				try {
 					const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${i}`);
 					const datas = await res.json();
-					const data = datas;
+					const datass = datas;
+					const data = datass;
 
 					commit("buscarPokemons", data);
 
 					this.state.pokemon.push(this.state.pokemons);
-					console.log(data);
 				} catch (error) {
 					console.log(error);
 				}
 			}
+			console.log(this.state.pokemon);
 		},
 	},
 	modules: {},
