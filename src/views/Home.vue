@@ -67,7 +67,7 @@
 					/>
 				</div>
 
-				<p class="numeroPokemon">Nº 00{{ poke.order }}</p>
+				<p class="numeroPokemon">Nº {{ poke.id }}</p>
 				<h3>{{ poke.name.charAt(0).toUpperCase() + poke.name.slice(1) }}</h3>
 
 				<div class="tarjetaPokemon__tipos">
@@ -120,7 +120,7 @@
 						v-if="poke.types.length == 2"
 						:style="
 							poke.types[1].type.name == 'fire '
-								? 'background: #C72100'
+								? 'background:#C72100'
 								: poke.types[1].type.name == 'grass'
 								? 'background:#66BA2A'
 								: poke.types[1].type.name == 'electric'
@@ -155,6 +155,8 @@
 								? 'background:#82DBF8'
 								: poke.types[1].type.name == 'steel'
 								? 'background:#9797A7'
+								: poke.types[1].type.name == 'fire'
+								? 'background:#C72100'
 								: ''
 						"
 					>
@@ -204,6 +206,13 @@ export default {
 
 		p {
 			margin-top: 1rem;
+			text-align: center;
+			margin: 0 auto;
+			padding: 1rem;
+			background-color: rgb(14, 150, 14);
+			font-size: 1.5rem;
+			border-radius: 15px;
+			margin-top: 1rem;
 		}
 		.buscador__barra {
 			margin-top: 0.5rem;
@@ -221,11 +230,12 @@ export default {
 	}
 	.pokemons {
 		background-color: #f2f2f2;
-		height: 50rem;
-		padding-top: 5rem;
-		padding: 5rem 0.5rem;
+
+		justify-items: center;
+		padding: 5rem 2rem;
 		display: grid;
 		justify-content: center;
+
 		.tarjetaPokemon {
 			padding: 1rem;
 			background-color: #313131;
@@ -236,8 +246,13 @@ export default {
 			overflow: hidden;
 			min-height: 25rem;
 			max-width: 15rem;
+			cursor: pointer;
 			&:hover {
 				transform: scale(1.1);
+				.tarjetaPokemon__contenedorImg__img {
+					transform: scale(1.2);
+					filter: drop-shadow(10px 20px 20px #000);
+				}
 			}
 
 			.tarjetaPokemon__contenedorImg {
