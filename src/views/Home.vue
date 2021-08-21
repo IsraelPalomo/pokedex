@@ -18,54 +18,56 @@
 		</section>
 		<section class="pokemons">
 			<div class="tarjetaPokemon" v-for="(poke, index) in pokemon" :key="index">
-				<div
-					class="tarjetaPokemon__contenedorImg"
-					:style="
-						poke.types[0].type.name == 'fire'
-							? 'background: #C72100'
-							: poke.types[0].type.name == 'grass'
-							? 'background:#66BA2A'
-							: poke.types[0].type.name == 'electric'
-							? 'background:#FBBA17'
-							: poke.types[0].type.name == 'water'
-							? 'background:#106CC7'
-							: poke.types[0].type.name == 'ground'
-							? 'background:#CFAE52'
-							: poke.types[0].type.name == 'rock'
-							? 'background:#9D863C'
-							: poke.types[0].type.name == 'fairy'
-							? 'background:#F0A9F0'
-							: poke.types[0].type.name == 'poison'
-							? 'background:#7D327E'
-							: poke.types[0].type.name == 'bug'
-							? 'background:#88960D'
-							: poke.types[0].type.name == 'dragon'
-							? 'background:#9481EB'
-							: poke.types[0].type.name == 'psychic'
-							? 'background:#D33367'
-							: poke.types[0].type.name == 'flying'
-							? 'background:#90A2F0'
-							: poke.types[0].type.name == 'fighting'
-							? 'background:#79301A'
-							: poke.types[0].type.name == 'normal'
-							? 'background:#C3BDB3'
-							: poke.types[0].type.name == 'dark'
-							? 'background:#0E0E0E'
-							: poke.types[0].type.name == 'ghost'
-							? 'background:#5E5EB0'
-							: poke.types[0].type.name == 'ice'
-							? 'background:#82DBF8'
-							: poke.types[0].type.name == 'steel'
-							? 'background:#9797A7'
-							: ''
-					"
-				>
-					<img
-						class="tarjetaPokemon__contenedorImg__img"
-						:src="poke.sprites.front_default"
-						alt=""
-					/>
-				</div>
+				<router-link :to="`/PokemonVista/${poke.id}`">
+					<div
+						class="tarjetaPokemon__contenedorImg"
+						:style="
+							poke.types[0].type.name == 'fire'
+								? 'background: #C72100'
+								: poke.types[0].type.name == 'grass'
+								? 'background:#66BA2A'
+								: poke.types[0].type.name == 'electric'
+								? 'background:#FBBA17'
+								: poke.types[0].type.name == 'water'
+								? 'background:#106CC7'
+								: poke.types[0].type.name == 'ground'
+								? 'background:#CFAE52'
+								: poke.types[0].type.name == 'rock'
+								? 'background:#9D863C'
+								: poke.types[0].type.name == 'fairy'
+								? 'background:#F0A9F0'
+								: poke.types[0].type.name == 'poison'
+								? 'background:#7D327E'
+								: poke.types[0].type.name == 'bug'
+								? 'background:#88960D'
+								: poke.types[0].type.name == 'dragon'
+								? 'background:#9481EB'
+								: poke.types[0].type.name == 'psychic'
+								? 'background:#D33367'
+								: poke.types[0].type.name == 'flying'
+								? 'background:#90A2F0'
+								: poke.types[0].type.name == 'fighting'
+								? 'background:#79301A'
+								: poke.types[0].type.name == 'normal'
+								? 'background:#C3BDB3'
+								: poke.types[0].type.name == 'dark'
+								? 'background:#0E0E0E'
+								: poke.types[0].type.name == 'ghost'
+								? 'background:#5E5EB0'
+								: poke.types[0].type.name == 'ice'
+								? 'background:#82DBF8'
+								: poke.types[0].type.name == 'steel'
+								? 'background:#9797A7'
+								: ''
+						"
+					>
+						<img
+							class="tarjetaPokemon__contenedorImg__img"
+							:src="poke.sprites.front_default"
+							alt=""
+						/>
+					</div>
+				</router-link>
 
 				<p class="numeroPokemon">Nº {{ poke.id }}</p>
 				<h3>{{ poke.name.charAt(0).toUpperCase() + poke.name.slice(1) }}</h3>
@@ -174,7 +176,9 @@ import { mapState, mapActions } from "vuex";
 
 export default {
 	data() {
-		return {};
+		return {
+			pokemonn: [],
+		};
 	},
 	name: "Home",
 	components: {},
