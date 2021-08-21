@@ -1,10 +1,10 @@
 <template>
-	<div>
+	<div class="TarjetaUnicaPokemon">
 		<h1>{{ pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1) }}</h1>
 		<div class="contenedor-1">
 			<div class="imagenes">
-				<img :src="pokemon.sprites.front_default" alt="" />
-				<img :src="pokemon.sprites.front_shiny" alt="" />
+				<img class="imagenes__1" :src="pokemon.sprites.front_default" alt="" />
+				<img class="imagenes__2" :src="pokemon.sprites.front_shiny" alt="" />
 			</div>
 			<div class="medidas">
 				<span> Altura : {{ pokemon.height }} m </span>
@@ -159,4 +159,23 @@ export default {
 };
 </script>
 
-<style></style>
+<style lang="scss" scoped>
+.TarjetaUnicaPokemon {
+	h1 {
+		text-align: center;
+		padding: 1rem;
+		color: white;
+		background-color: #323232;
+	}
+	.imagenes {
+		.imagenes__1 {
+			width: 25rem;
+			height: 25rem;
+			margin: 0 auto;
+		}
+		.imagenes__2 {
+			position: relative;
+		}
+	}
+}
+</style>
