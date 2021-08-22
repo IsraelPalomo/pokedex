@@ -150,6 +150,12 @@ export default {
 				console.log(data);
 			} catch (error) {
 				console.log(error);
+				this.$swal.fire({
+					icon: "Error",
+					title: "Oops...",
+					text: "Something went wrong!",
+					footer: '<a href="">Why do I have this issue?</a>',
+				});
 			}
 		},
 	},
