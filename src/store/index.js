@@ -16,7 +16,7 @@ export default new Vuex.Store({
 	},
 	actions: {
 		async buscarPokemon({ commit }) {
-			for (let i = 1; i < 899; i++) {
+			for (let i = 1; i < 898; i++) {
 				try {
 					const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${i}`);
 					const datas = await res.json();

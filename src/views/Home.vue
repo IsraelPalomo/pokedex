@@ -205,7 +205,7 @@ export default {
 		padding: 1rem;
 	}
 	.buscador {
-		background-color: #313131;
+		background-color: #2f2f2f;
 		color: white;
 		padding: 2rem 2rem 2rem 1rem;
 		text-align: left;
@@ -235,7 +235,7 @@ export default {
 		}
 	}
 	.pokemons {
-		background-color: #f2f2f2;
+		background-image: url("../assets/body_bg.png");
 
 		justify-items: center;
 		padding: 5rem 2rem;
@@ -253,6 +253,10 @@ export default {
 			min-height: 25rem;
 			max-width: 15rem;
 			cursor: pointer;
+			box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.155), 0 6.7px 5.3px rgba(0, 0, 0, 0.222),
+				0 12.5px 10px rgba(0, 0, 0, 0.275), 0 22.3px 17.9px rgba(0, 0, 0, 0.328),
+				0 41.8px 33.4px rgba(0, 0, 0, 0.395), 0 100px 80px rgba(0, 0, 0, 0.55);
+
 			&:hover {
 				transform: scale(1.1);
 				.tarjetaPokemon__contenedorImg__img {
