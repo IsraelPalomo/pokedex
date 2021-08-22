@@ -5,10 +5,11 @@
 			<div class="parte1">
 				<h2>Nombre o número</h2>
 				<div class="buscador__barra">
-					<input type="text" />
-					<button>
-						<i class="fas fa-search"></i>
-					</button>
+					<input type="text" v-model="pokemonBusqueda" />
+					<router-link :to="`/PokemonVista/${pokemonBusqueda}`"
+						><button>
+							<i class="fas fa-search"></i></button
+					></router-link>
 				</div>
 			</div>
 			<p>
@@ -178,6 +179,7 @@ export default {
 	data() {
 		return {
 			pokemonn: [],
+			pokemonBusqueda: "",
 		};
 	},
 	name: "Home",

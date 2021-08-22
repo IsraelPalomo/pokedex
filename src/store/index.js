@@ -30,7 +30,6 @@ export default new Vuex.Store({
 					console.log(error);
 				}
 			}
-			console.log(this.state.pokemon);
 		},
 	},
 	modules: {},
