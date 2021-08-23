@@ -151,10 +151,10 @@ export default {
 			} catch (error) {
 				console.log(error);
 				this.$swal.fire({
-					icon: "Error",
+					icon: "error",
 					title: "Oops...",
-					text: "Something went wrong!",
-					footer: '<a href="">Why do I have this issue?</a>',
+					text: "El pokemon que buscas no existe",
+					confirmButtonText: "<a href='/'>Volver a la pokedex</a>",
 				});
 			}
 		},
@@ -175,8 +175,12 @@ export default {
 		margin-bottom: 3rem;
 	}
 	.contenedor-1 {
+		box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.155), 0 6.7px 5.3px rgba(0, 0, 0, 0.222),
+			0 12.5px 10px rgba(0, 0, 0, 0.275), 0 22.3px 17.9px rgba(0, 0, 0, 0.328),
+			0 41.8px 33.4px rgba(0, 0, 0, 0.395), 0 100px 80px rgba(0, 0, 0, 0.55);
+
 		width: 80%;
-		background-color: #323232;
+		background-image: url("../assets/body_bg.png");
 		margin: 0 auto;
 		max-width: 40rem;
 		.imagenes {
@@ -213,6 +217,9 @@ export default {
 			color: #1d1b1b;
 			font-weight: 600;
 			font-size: 1.1rem;
+			box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.155), 0 6.7px 5.3px rgba(0, 0, 0, 0.222),
+				0 12.5px 10px rgba(0, 0, 0, 0.275), 0 22.3px 17.9px rgba(0, 0, 0, 0.328),
+				0 41.8px 33.4px rgba(0, 0, 0, 0.395), 0 100px 80px rgba(0, 0, 0, 0.55);
 		}
 		.tipo2 {
 			padding: 0.5rem;
@@ -222,11 +229,14 @@ export default {
 			color: #1d1b1b;
 			font-weight: 600;
 			font-size: 1.1rem;
+			box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.155), 0 6.7px 5.3px rgba(0, 0, 0, 0.222),
+				0 12.5px 10px rgba(0, 0, 0, 0.275), 0 22.3px 17.9px rgba(0, 0, 0, 0.328),
+				0 41.8px 33.4px rgba(0, 0, 0, 0.395), 0 100px 80px rgba(0, 0, 0, 0.55);
 		}
 	}
 	.puntos_base {
 		padding: 2rem;
-		background-color: #323232;
+		background-image: url("../assets/body_bg.png");
 		text-align: center;
 		display: grid;
 		grid-template-columns: 1fr;
@@ -248,6 +258,10 @@ export default {
 
 		&:hover {
 			background-color: #9e3819;
+			box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.155), 0 6.7px 5.3px rgba(0, 0, 0, 0.222),
+				0 12.5px 10px rgba(0, 0, 0, 0.275), 0 22.3px 17.9px rgba(0, 0, 0, 0.328),
+				0 41.8px 33.4px rgba(0, 0, 0, 0.395), 0 100px 80px rgba(0, 0, 0, 0.55);
+			transform: scale(1.1);
 		}
 	}
 	.router {
