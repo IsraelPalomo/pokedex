@@ -19,7 +19,13 @@
 			</p>
 		</section>
 		<section class="pokemons">
-			<div class="tarjetaPokemon" v-for="(poke, index) in pokemon" :key="index">
+			<div
+				class="tarjetaPokemon"
+				v-for="(poke, index) in pokemon"
+				:key="index"
+				data-aos="fade-right"
+				data-aos-duration="1000"
+			>
 				<router-link :to="`/PokemonVista/${poke.id}`">
 					<div
 						class="tarjetaPokemon__contenedorImg"
@@ -207,7 +213,7 @@ export default {
 .home {
 	.volver {
 		position: fixed;
-		right: 5rem;
+		right: 3rem;
 		z-index: 99999;
 		bottom: 3rem;
 		font-size: 3rem;

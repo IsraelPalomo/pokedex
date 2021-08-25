@@ -10,10 +10,15 @@ Vue.use(infiniteScroll);
 import axios from "axios";
 import VueAxios from "vue-axios";
 Vue.use(VueAxios, axios);
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 Vue.config.productionTip = false;
 
 new Vue({
+	created() {
+		AOS.init();
+	},
 	router,
 	store,
 	render: (h) => h(App),
