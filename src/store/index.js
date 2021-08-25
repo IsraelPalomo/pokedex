@@ -8,6 +8,8 @@ export default new Vuex.Store({
 		pokemons: {},
 		pokemon: [],
 		colores: [],
+		indice: 1,
+		valorBucle: 49,
 	},
 	mutations: {
 		buscarPokemons(state, payload) {
@@ -16,9 +18,9 @@ export default new Vuex.Store({
 	},
 	actions: {
 		async buscarPokemon({ commit }) {
-			for (let i = 1; i < 898; i++) {
+			for (this.state.indice; this.state.indice < 24; this.state.indice++) {
 				try {
-					const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${i}`);
+					const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${this.state.indice}`);
 					const datas = await res.json();
 					const datass = datas;
 					const data = datass;
@@ -30,6 +32,25 @@ export default new Vuex.Store({
 					console.log(error);
 				}
 			}
+		},
+		async cargarPokemon({ commit }) {
+			for (this.state.indice; this.state.indice < this.state.valorBucle; this.state.indice++) {
+				try {
+					const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${this.state.indice}`);
+					const datas = await res.json();
+					const datass = datas;
+					const data = datass;
+					console.log(data);
+
+					commit("buscarPokemons", data);
+
+					this.state.pokemon.push(this.state.pokemons);
+				} catch (error) {
+					console.log(error);
+				}
+			}
+
+			this.state.valorBucle = this.state.valorBucle + 24;
 		},
 	},
 	modules: {},

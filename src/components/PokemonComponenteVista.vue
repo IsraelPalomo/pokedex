@@ -137,6 +137,7 @@ export default {
 		return {
 			numeroPokemon: this.$route.params.id,
 			pokemon: {},
+			indice: 1,
 		};
 	},
 	methods: {
@@ -154,7 +155,7 @@ export default {
 					icon: "error",
 					title: "Oops...",
 					text: "El pokemon que buscas no existe",
-					confirmButtonText: "<a href='/'>Volver a la pokedex</a>",
+					confirmButtonText: "<a href='/'>Volver a la pokedex</a>;",
 				});
 			}
 		},

@@ -168,11 +168,15 @@
 				</div>
 			</div>
 		</section>
+		<div class="contenedor__btn">
+			<button class="btn__cargarMas" @click="cargarPokemon()">Cargar Mas</button>
+		</div>
 	</div>
 </template>
 
 <script>
 import { mapState, mapActions } from "vuex";
+
 // @ is an alias to /src
 
 export default {
@@ -189,8 +193,9 @@ export default {
 		...mapState(["pokemon"]),
 	},
 	methods: {
-		...mapActions(["buscarPokemon"]),
+		...mapActions(["buscarPokemon", "cargarPokemon"]),
 	},
+
 	created() {
 		this.buscarPokemon();
 	},
@@ -199,6 +204,25 @@ export default {
 
 <style lang="scss" scoped>
 .home {
+	.contenedor__btn {
+		padding: 2rem 0;
+		background-image: url("../assets/body_bg.png");
+		.btn__cargarMas {
+			margin: 0 auto;
+			display: block;
+			padding: 0.5rem 0.7rem;
+			background-color: #f18655;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+			font-size: 1.2rem;
+			&:hover {
+				transform: scale(1.1);
+				background-color: #a05939;
+			}
+		}
+	}
+
 	.titulo--principal {
 		background-color: white;
 		color: grey;
@@ -232,6 +256,11 @@ export default {
 			background-color: #f18655;
 			border: none;
 			border-radius: 5px;
+			cursor: pointer;
+			&:hover {
+				transform: scale(1.1);
+				background-color: #a05939;
+			}
 		}
 	}
 	.pokemons {
