@@ -1,7 +1,23 @@
 <template>
 	<div class="home" id="inicio">
 		<a href="#inicio"><i class="fas fa-arrow-circle-up volver"></i></a>
-		<h1 class="titulo--principal">Pokédex</h1>
+		<div class="contenedor__titulo">
+			<h1 class="titulo--principal"><span>Pokédex</span></h1>
+			<div class="footer__sociales">
+				<a href="https://www.instagram.com/diplodev/" target="_blank"
+					><i class=" icono fab fa-instagram-square"></i
+				></a>
+				<a href="https://twitter.com/DevDiplo" target="_blank"
+					><i class="icono fab fa-twitter-square"></i
+				></a>
+				<a href="https://www.linkedin.com/in/israel-palomo-espa%C3%B1a-544b05206/" target="_blank"
+					><i class="icono fab fa-linkedin"></i
+				></a>
+				<a href="https://github.com/IsraelPalomo" target="_blank"
+					><i class="icono fab fa-github-square"></i
+				></a>
+			</div>
+		</div>
 		<section class="buscador">
 			<div class="parte1">
 				<h2>Nombre o número</h2>
@@ -13,10 +29,6 @@
 					></router-link>
 				</div>
 			</div>
-			<p>
-				Busca el pokemon por su nombre <br />
-				o por su numero en la pokedex
-			</p>
 		</section>
 		<section class="pokemons">
 			<div
@@ -176,7 +188,7 @@
 			</div>
 		</section>
 		<div class="contenedor__btn">
-			<button class="btn__cargarMas" @click="cargarPokemon()">Cargar Mas</button>
+			<button class="btn__cargarMas" @click="cargarPokemon(), pulse()">Cargar Mas</button>
 		</div>
 	</div>
 </template>
@@ -211,6 +223,24 @@ export default {
 
 <style lang="scss" scoped>
 .home {
+	.contenedor__titulo {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		.footer__sociales {
+			font-size: 1.7rem;
+			display: flex;
+			gap: 1rem;
+
+			text-decoration: none;
+			i {
+				color: #323232;
+				&:hover {
+					transform: scale(1.1);
+				}
+			}
+		}
+	}
 	.volver {
 		position: fixed;
 		right: 3rem;
@@ -246,11 +276,15 @@ export default {
 		color: grey;
 		padding: 1rem;
 	}
+	span {
+		color: #323232;
+	}
 	.buscador {
 		background-color: #2f2f2f;
 		color: white;
 		padding: 2rem 2rem 2rem 1rem;
-		text-align: left;
+		text-align: center;
+		margin: 0 auto;
 
 		p {
 			margin-top: 1rem;
