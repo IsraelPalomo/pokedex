@@ -1,5 +1,6 @@
 <template>
-	<div class="home">
+	<div class="home" id="inicio">
+		<a href="#inicio"><i class="fas fa-arrow-circle-up volver"></i></a>
 		<h1 class="titulo--principal">Pokédex</h1>
 		<section class="buscador">
 			<div class="parte1">
@@ -204,6 +205,17 @@ export default {
 
 <style lang="scss" scoped>
 .home {
+	.volver {
+		position: fixed;
+		right: 5rem;
+		z-index: 99999;
+		bottom: 3rem;
+		font-size: 3rem;
+		color: white;
+		&:hover {
+			transform: scale(1.1);
+		}
+	}
 	.contenedor__btn {
 		padding: 2rem 0;
 		background-image: url("../assets/body_bg.png");
