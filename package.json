@@ -1,37 +1,41 @@
 {
-  "name": "pokedex",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
-  },
-  "dependencies": {
-    "aos": "^2.3.4",
-    "axios": "^0.21.1",
-    "core-js": "^3.6.5",
-    "sweetalert2": "^11.1.4",
-    "vue": "^2.6.11",
-    "vue-axios": "^3.2.5",
-    "vue-infinite-loading": "^2.4.5",
-    "vue-infinite-scroll": "^2.0.2",
-    "vue-router": "^3.2.0",
-    "vue-spinner": "^1.0.4",
-    "vue-sweetalert2": "^5.0.2",
-    "vuex": "^3.4.0"
-  },
-  "devDependencies": {
-    "@vue/cli-plugin-babel": "~4.5.0",
-    "@vue/cli-plugin-eslint": "~4.5.0",
-    "@vue/cli-plugin-router": "~4.5.0",
-    "@vue/cli-plugin-vuex": "~4.5.0",
-    "@vue/cli-service": "~4.5.0",
-    "babel-eslint": "^10.1.0",
-    "eslint": "^6.7.2",
-    "eslint-plugin-vue": "^6.2.2",
-    "sass": "^1.26.5",
-    "sass-loader": "^8.0.2",
-    "vue-template-compiler": "^2.6.11"
-  }
+	"name": "pokedex",
+	"version": "0.1.0",
+	"private": true,
+	"scripts": {
+		"serve": "vue-cli-service serve",
+		"build": "vue-cli-service build",
+		"lint": "vue-cli-service lint",
+		"lintt": "eslint src/",
+		"lintt-fix": "eslint src/ --fix"
+	},
+	"dependencies": {
+		"aos": "^2.3.4",
+		"axios": "^0.21.1",
+		"core-js": "^3.6.5",
+		"sweetalert2": "^11.1.4",
+		"vue": "^2.6.11",
+		"vue-axios": "^3.2.5",
+		"vue-infinite-loading": "^2.4.5",
+		"vue-infinite-scroll": "^2.0.2",
+		"vue-router": "^3.2.0",
+		"vue-spinner": "^1.0.4",
+		"vue-sweetalert2": "^5.0.2",
+		"vuex": "^3.4.0"
+	},
+	"devDependencies": {
+		"@vue/cli-plugin-babel": "~4.5.0",
+		"@vue/cli-plugin-eslint": "~4.5.0",
+		"@vue/cli-plugin-router": "~4.5.0",
+		"@vue/cli-plugin-vuex": "~4.5.0",
+		"@vue/cli-service": "~4.5.0",
+		"babel-eslint": "^10.1.0",
+		"eslint": "^7.32.0",
+		"eslint-config-airbnb-base": "^14.2.1",
+		"eslint-plugin-import": "^2.24.2",
+		"eslint-plugin-vue": "^7.18.0",
+		"sass": "^1.26.5",
+		"sass-loader": "^8.0.2",
+		"vue-template-compiler": "^2.6.11"
+	}
 }
